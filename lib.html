@@ -1,11 +1,29 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
+    <link rel="stylesheet" href="lib.css">
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
 </head>
 <body>
-    
+    <label for ="title-input">Book title:</label>
+    <input id="title-input" placecholder="title" type="text"></input>
+    <br>
+    <label for ="pages-input">Book length:</label>
+    <input id="pages-input" placecholder="number of pages" type="text"></input>
+    <br>
+    <label for ="author-input">Author:</label>
+    <input id="author-input" placeholder="ex: William Shakespeare" type="text"></input>
+    <br>
+    <input type="radio" id="not-read" name="readYet" value="false">
+<label for="have-read">Not read</label><br>
+<input type="radio" id="not-read" name="readYet" value="true">
+<label for="have-read">Have read</label>
+<br>
+<button id="btn">Add book</button>
+    <div id="bookshelf">
+    </div>
+<script src="lib.js"></script>
 </body>
 </html>
