@@ -2,6 +2,18 @@ body{
     color: black;
     background-color: rgb(248,248,255);
 }
+#pop-up{
+    background-color: gold;
+    height: 50vh;
+    width: 50vw;
+    flex-direction: column;
+    justify-content: space-evenly;
+    padding: 2%;
+    display: none;
+    visibility: hidden;
+    position: fixed;
+    box-shadow: 2px 5px;
+}
 #bookshelf{
     display: flex;
     flex-direction: row;
