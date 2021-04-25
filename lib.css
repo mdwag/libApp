@@ -1,6 +1,16 @@
 body{
     color: black;
     background-image: linear-gradient(to right, #ADD8E6, #33A1C9);
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+}
+#title{
+    margin: auto;
+    text-align: center;
+    font-size: xx-large;
+}
+#stats{
+    margin: 2%;
+    font-size: 3em;
 }
 #pop-up{
     background-color: #f2f2ed;
@@ -36,7 +46,7 @@ body{
 }
 #new-book {
     position: relative;
-    margin: 0;
+    margin-left: 5%;
     padding: 5px 12px;
     height: 60px;
     width: 150px;

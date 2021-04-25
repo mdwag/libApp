@@ -10,6 +10,8 @@ let haveReadBox = document.querySelector('#have-read');
 let readBox = document.querySelector("#read-yet");
 let newBookBtn = document.querySelector("#new-book");
 let popUpForm = document.querySelector("#pop-up");
+let statsDiv = document.querySelector("#stats");
+let totalPages = 0;
 
 
 //put the event listener on the submit button
@@ -36,7 +38,7 @@ function Book(title, author, pages) {
     this.pages = pages;
     this.info = `This book is called ${title}. It is by ${author}. It is ${pages} pages long.`;
     if (readBox.checked === true){
-      this.haveRead = "Yes.";
+      this.haveRead = "Yes";
     }
     else if (readBox.checked !== true){
       this.haveRead = "No";
@@ -54,6 +56,8 @@ function addBookToLibrary() {
 
 function makeList(){
   bookshelf.innerHTML = "";
+  totalPages = 0;
+  
   for (let i = 0; i < myLibrary.length; i++){
     let newCard = document.createElement("div");
     let delBtn = document.createElement("button");
@@ -66,16 +70,12 @@ function makeList(){
     let authorDiv = document.createElement("div");
     let lengthDiv = document.createElement("div");
     let readDiv = document.createElement("div");
-    doneBtn = document.createElement("button");
 
-
-    let doneText = document.createTextNode("Finished Book");
     let titleText = document.createTextNode(`Title: ${myLibrary[i].title}`);
     let authorText = document.createTextNode(`Author: ${myLibrary[i].author}`);
     let lengthText = document.createTextNode(`Number of pages: ${myLibrary[i].pages}`);
     let readText = document.createTextNode(`Finished: ${myLibrary[i].haveRead}`); 
 
-    doneBtn.appendChild(doneText);
     titleDiv.appendChild(titleText);
     authorDiv.appendChild(authorText);
     lengthDiv.appendChild(lengthText);
@@ -88,11 +88,19 @@ function makeList(){
     newCard.appendChild(readDiv);
     bookshelf.appendChild(newCard);
     newCard.appendChild(delBtn);
-    newCard.appendChild(doneBtn);
 
-    doneBtn.addEventListener("click", function(){
+    if (myLibrary[i].haveRead === "No"){
+    doneBtn = document.createElement("button");
+    let doneText = document.createTextNode("Finished Book");
+    doneBtn.appendChild(doneText);
+    newCard.appendChild(doneBtn);
+     doneBtn.addEventListener("click", function(){
       makeDone(i)});
+  } else if (myLibrary[i].haveRead === "Yes") {
+    totalPages += Number(myLibrary[i].pages);
   }
+}
+showStats();
 }
 
 function delCard(index){
@@ -103,4 +111,7 @@ function delCard(index){
 function makeDone(index){
   myLibrary[index].haveRead = "Yes";
   makeList();
+}
+function showStats(){
+  statsDiv.innerHTML = `Total pages read: ${totalPages}.`;
 }
