@@ -66,27 +66,41 @@ function makeList(){
     let authorDiv = document.createElement("div");
     let lengthDiv = document.createElement("div");
     let readDiv = document.createElement("div");
+    doneBtn = document.createElement("button");
 
+
+    let doneText = document.createTextNode("Finished Book");
     let titleText = document.createTextNode(`Title: ${myLibrary[i].title}`);
     let authorText = document.createTextNode(`Author: ${myLibrary[i].author}`);
-    let lengthText = document.createTextNode(`Length: ${myLibrary[i].pages} pages`);
+    let lengthText = document.createTextNode(`Number of pages: ${myLibrary[i].pages}`);
     let readText = document.createTextNode(`Finished: ${myLibrary[i].haveRead}`); 
 
+    doneBtn.appendChild(doneText);
     titleDiv.appendChild(titleText);
     authorDiv.appendChild(authorText);
     lengthDiv.appendChild(lengthText);
     readDiv.appendChild(readText);
 
+    
     newCard.appendChild(titleDiv);
     newCard.appendChild(authorDiv);
     newCard.appendChild(lengthDiv);
     newCard.appendChild(readDiv);
     bookshelf.appendChild(newCard);
     newCard.appendChild(delBtn);
+    newCard.appendChild(doneBtn);
+
+    doneBtn.addEventListener("click", function(){
+      makeDone(i)});
   }
 }
 
 function delCard(index){
   myLibrary.splice(index, 1);
+  makeList();
+}
+
+function makeDone(index){
+  myLibrary[index].haveRead = "Yes";
   makeList();
 }

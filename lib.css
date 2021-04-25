@@ -1,9 +1,9 @@
 body{
     color: black;
-    background-color: rgb(248,248,255);
+    background-image: linear-gradient(to right, #ADD8E6, #33A1C9);
 }
 #pop-up{
-    background-color: gold;
+    background-color: #f2f2ed;
     height: 50vh;
     width: 50vw;
     flex-direction: column;
@@ -20,8 +20,6 @@ body{
     flex-wrap: wrap;
     height: 90%;
     width: 90%; 
-    border: black solid 5px;
-    background-color: #6A1616;
     min-width: 500px;
     min-height: 1000px;
 }
@@ -31,8 +29,29 @@ body{
     height: 30vh;
     width: 15vw;
     padding: 1%;
-    background-color: #D6CCA9;
-    box-shadow: 2px 5px;
+    background-color:#d99d29;
+    box-shadow: 4px 9px;
     border-radius: 3%;
     margin: 3%;
+}
+#new-book {
+    position: relative;
+    margin: 0;
+    padding: 5px 12px;
+    height: 60px;
+    width: 150px;
+    outline: none;
+    text-decoration: none;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+    text-transform: uppercase;
+    background-color: #ffffff;
+    border: 1px solid rgba(22, 76, 167, 0.6);
+    border-radius: 10px;
+    color: #1d89ff;
+    font-weight: 400;
+    font-size: 20px;
+    font-family: inherit;
 }
