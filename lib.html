@@ -14,18 +14,20 @@
     </div>
     <button id="new-book">New Book</button>
     <div id="pop-up">
+    <form id="entry" action="/puppy">
     <label for ="title-input">Book title:</label>
-    <input id="title-input" placecholder="title" type="text"></input>
+    <input id="title-input" placeholder="title required" type="text" required></input>
     <br>
     <label for ="pages-input">Book length:</label>
-    <input id="pages-input" placecholder="number of pages" type="number"></input>
+    <input id="pages-input" placecholder="number of pages" type="number" required></input>
     <br>
     <label for ="author-input">Author:</label>
-    <input id="author-input" placeholder="ex: William Shakespeare" type="text"></input>
+    <input id="author-input" placeholder="ex: William Shakespeare" type="text" required></input>
     <br>
     <input id="read-yet" type="checkbox">I've finished reading this book.</input>
     <br>
-<button id="btn">Add book</button>
+<input id="btn" type="submit"></input>
+</form>
     </div>
     <div id="bookshelf">
     </div>

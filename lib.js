@@ -11,12 +11,19 @@ let readBox = document.querySelector("#read-yet");
 let newBookBtn = document.querySelector("#new-book");
 let popUpForm = document.querySelector("#pop-up");
 let statsDiv = document.querySelector("#stats");
+let bookInfo = document.querySelector("#book-info");
+let entry = document.querySelector("#entry");
 let totalPages = 0;
 
-
+entry.addEventListener("submit", function (e) {
+  e.preventDefault();
+  addBookToLibrary();
+});
 //put the event listener on the submit button
-subBtn.addEventListener("click", addBookToLibrary);
 newBookBtn.addEventListener("click", showForm);
+
+
+
 
 
 function showForm(){
@@ -32,7 +39,8 @@ function hideForm(){
  popUpForm.style.display = "none";
 }
 //constructor function that creates new obects
-function Book(title, author, pages) {
+class Book{
+  constructor(title, author, pages) {
     this.title = title;
     this.author = author;
     this.pages = pages;
@@ -43,6 +51,7 @@ function Book(title, author, pages) {
     else if (readBox.checked !== true){
       this.haveRead = "No";
     }
+  }
 }
 
 
